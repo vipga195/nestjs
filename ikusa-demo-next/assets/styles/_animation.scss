@@ -1,0 +1,369 @@
+@include animationName(fadeIn) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@include animationName(fadeInDown) {
+  0% {
+    opacity: 0;
+    @include transform(translate3d(0, -100%, 0));
+  }
+
+  100% {
+    opacity: 1;
+    @include transform(translate3d(0, 0, 0));
+  }
+}
+
+@include animationName(lineIn) {
+  0% {
+    width: 0;
+    background: #fff;
+  }
+
+  100% {
+    width: 100%;
+    background: #fff;
+  }
+}
+
+@include animationName(fadeOutRight) {
+  0% {
+    opacity: 1;
+    @include transform(translate3d(0, 0, 0));
+  }
+
+  100% {
+    opacity: 0;
+    @include transform(translate3d(100%, 0, 0));
+  }
+}
+
+@include animationName(fadeOutDown) {
+  0% {
+    opacity: 1;
+    @include transform(translate3d(0, 0, 0));
+  }
+
+  100% {
+    opacity: 0;
+    @include transform(translate3d(0, 100%, 0));
+  }
+}
+
+@include animationName(fly-clouds) {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(calc(100vw));
+  }
+}
+
+@include animationName(scrollLeft) {
+  0% {
+    opacity: 0;
+    width: 30%;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+
+@include animationName(scrollLeftSmall) {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    width: 35px;
+  }
+}
+
+@include animationName(fadeInUpPercent) {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@include animationName(fadeInUpWithSkew) {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 80px, 0) skewX(-23deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) skewX(-23deg);
+  }
+}
+
+@include animationName(zoomInLarge) {
+  0% {
+    opacity: 0;
+    transform: scale(5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@include animationName(leftOut) {
+  0% {
+    left: -49%;
+  }
+
+  100% {
+    left: -150%;
+  }
+}
+
+@include animationName(rightOut) {
+  0% {
+    left: 50%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+@include animationName(fadeInTopLeft) {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.fadeInTopLeft {
+  @apply opacity-0 -translate-x-[200%] -translate-y-[200%] duration-[900ms] delay-[2000ms];
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.15, 0, 0, 1);
+
+  &.visible {
+    @apply opacity-100 translate-x-0 translate-y-0;
+  }
+}
+
+.fadeInTop {
+  @apply opacity-0 translate-x-0 -translate-y-[200%] duration-700 delay-700;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(.15,0,0,1);
+
+  &.visible {
+    @apply opacity-100 translate-x-0 translate-y-0;
+  }
+}
+
+.zoomInLarge {
+  @apply opacity-0 duration-700 delay-300;
+  transform: scale(5);
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.15, 0, 0, 1);
+
+  &.visible {
+    @apply opacity-100;
+    transform: scale(1)
+  }
+}
+
+.fadeInBottom {
+  @apply opacity-0 translate-x-0 translate-y-[100%] duration-700 delay-700;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(.15,0,0,1) ;
+
+  &.visible {
+    @apply opacity-100 translate-x-0 translate-y-0;
+  }
+}
+
+@include animationName(fadeInBottomLeft) {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInBottomLeft {
+  @apply opacity-0 -translate-x-[200%] translate-y-[200%] duration-[900ms] delay-[2000ms];
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.15, 0, 0, 1);
+
+  &.visible {
+    @apply opacity-100 translate-x-0 translate-y-0;
+  }
+}
+
+@include animationName(fadeInBottomRight) {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInBottomRight {
+  @apply opacity-0 translate-x-[200%] translate-y-[200%] duration-[900ms] delay-[2000ms];
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.15, 0, 0, 1);
+
+  &.visible {
+    @apply opacity-100 translate-x-0 translate-y-0;
+  }
+}
+
+@include animationName(kira) {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  40%,
+  60% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@include animationName(fadeInUp) {
+  0% {
+    opacity: 0;
+    transform: translate(0, 50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@include animationName(fadeInRight) {
+  0% {
+    opacity: 0;
+    transform: translate3d(-35%, 0, 0);
+    animation-timing-function: cubic-bezier(0.09, 0.99, 0.54, 0.99);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.fadeInRight {
+  @apply opacity-100 translate-x-full duration-700 delay-1000;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.09, 0.99, 0.54, 0.99);
+
+  &.visible {
+    @apply opacity-100 translate-x-0;
+  }
+}
+
+@include animationName(fadeInLeft) {
+  0% {
+    opacity: 0;
+    transform: translate3d(-65%, 0, 0);
+    animation-timing-function: cubic-bezier(0.09, 0.99, 0.54, 0.99);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  @apply opacity-100 -translate-x-full duration-500 delay-300;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.09, 0.99, 0.54, 0.99);
+
+  &.visible {
+    @apply opacity-100 translate-x-0;
+  }
+}
+
+@include animationName(zoomOut) {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.zoomOut {
+  @apply opacity-0 scale-0 duration-500 delay-300;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.09, 0.99, 0.54, 0.99);
+
+  &.visible {
+    @apply opacity-100 scale-100;
+  }
+}
+
+@include animationName(sunshine) {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "top_menu": { "name": "Menu", "event_category": "top", "is_label": false },
+  "top_main_bnr": { "name": "Main_bnr", "event_category": "top", "is_label": false },
+  "top_entry": { "name": "Entry", "event_category": "top", "is_label": false },
+  "top_youtube": { "name": "Youtube", "event_category": "top", "is_label": false },
+  "top_rule": { "name": "Rule", "event_category": "top", "is_label": false },
+  "menu_top": { "name": "Top", "event_category": "menu", "is_label": false },
+  "menu_outline": { "name": "Outline", "event_category": "menu", "is_label": false },
+  "menu_rule": { "name": "Rule", "event_category": "menu", "is_label": false },
+  "menu_guest": { "name": "Guest", "event_category": "menu", "is_label": false },
+  "menu_award": { "name": "Award", "event_category": "menu", "is_label": false },
+  "menu_caution": { "name": "Caution", "event_category": "menu", "is_label": false },
+  "rule_book": { "name": "Book", "event_category": "rule", "is_label": false },
+  "entry_entry": { "name": "Entry", "event_category": "entry", "is_label": true },
+  "entry_team": { "name": "Team", "event_category": "entry", "is_label": true }
+}

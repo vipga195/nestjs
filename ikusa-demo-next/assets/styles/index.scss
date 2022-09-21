@@ -1,0 +1,11 @@
+@import "./_mixins";
+@import "./functions";
+@import "./_animation";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$loading-time: 500ms;
+$animation-duration: 700ms;
+

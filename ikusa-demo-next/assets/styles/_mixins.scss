@@ -1,0 +1,158 @@
+@mixin scrollBar($color: #fff) {
+  scroll-behavior: smooth;
+  scrollbar-color: $color transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background: $color;
+    height: 3px;
+  }
+  @content;
+}
+
+@mixin hideScrollBar() {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+}
+
+@mixin clearfix() {
+  clear: both;
+}
+
+@mixin fontHira($pre) {
+  font-family: “ヒラギノ角ゴ Pro #{$pre}”, “Hiragino Kaku Gothic Pro”, sans-serif;
+}
+
+@mixin skew {
+  transform: skew($global-skew-value);
+}
+
+@mixin unSkew {
+  transform: skew(-$global-skew-value);
+}
+
+@mixin onMobile {
+  @media screen and(max-width: 768px) and(min-width: 250px) {
+    @content;
+  }
+}
+
+@mixin onMobileLandscape {
+  @media screen
+    and (max-width: 768px)
+    and(min-width: 250px)
+    and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin displayFlex($alignItems: false, $justifyContent: false, $flexDirection: false) {
+  display: flex;
+
+  @if $alignItems { align-items: $alignItems; }
+
+  @if $justifyContent { justify-content: $justifyContent; }
+
+  @if $flexDirection { flex-direction: $flexDirection; }
+}
+
+@mixin position($position: relative, $top: false, $left: false, $right: false, $bottom: false) {
+  position: $position;
+
+  @if $top { top: $top; }
+
+  @if $left { left: $left; }
+
+  @if $right { right: $right; }
+
+  @if $bottom { bottom: $bottom; }
+}
+
+@mixin sizeKV($width, $height, $top, $left) {
+  width: wkv($width);
+  height: hkv($height);
+  top: topkv($top);
+  left: leftkv($left);
+}
+
+@mixin justify-content($var: center) {
+  justify-content: $var;
+  -webkit-justify-content: $var;
+  -moz-justify-content: $var;
+  -ms-justify-content: $var;
+  -o-justify-content: $var;
+}
+
+@mixin align-items($var: center) {
+  align-items: $var;
+  -webkit-align-items: $var;
+  -ms-flex-item-align: $var;
+}
+
+@mixin flex-direction($var: column) {
+  -webkit-flex-direction: $var;
+  -ms-flex-direction: $var;
+  flex-direction: $var;
+}
+
+@mixin transform($var) {
+  -webkit-transform: $var;
+  -moz-transform: $var;
+  -ms-transform: $var;
+  -o-transform: $var;
+  transform: $var;
+}
+
+@mixin transition($var) {
+  -webkit-transition: $var;
+  -moz-transition: $var;
+  -o-transition: $var;
+  transition: $var;
+}
+
+@mixin animationName($name) {
+
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+$global-skew-value: -23deg;
+@mixin skew {
+  transform: skew($global-skew-value);
+}
+
+@mixin unSkew {
+  transform: skew(-$global-skew-value);
+}
